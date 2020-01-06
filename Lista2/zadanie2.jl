@@ -1,3 +1,6 @@
+#Eliza Zawisza
+#244967
+
 using Plots
 using SymPy
 
@@ -12,18 +15,7 @@ print("Limit of f(x) -> oo is " ,limit(f(x), x,oo))
 # stop - end of range
 
 function generatePlot(start, stop)
-    X = []
-    Y = []
-
-    for i in start:stop
-        push!(X, Float64(i))
-    end
-
-    for x in X
-        push!(Y, f(x))
-    end
-
-    plot(X, Y)
+    plot(f(x), start, stop, label="f(x)")
     file_name = string("ex2_plot_", abs(start), "_", abs(stop), ".png")
     savefig(file_name)
 end
